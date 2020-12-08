@@ -1,0 +1,26 @@
+CREATE DATABASE personal_ava;
+
+USE personal_ava;
+
+CREATE TABLE modulo (
+    id INT NOT NULL AUTO_INCREMENT,
+    img VARCHAR(255) NOT NULL,
+    nome VARCHAR(100) NOT NULL,
+    semestre INT NOT NULL,
+    PRIMARY KEY (id)
+);
+
+CREATE TABLE topico (
+    id INT NOT NULL AUTO_INCREMENT,
+    nome VARCHAR(255) NOT NULL,
+    idmodulo INT NOT NULL,
+    PRIMARY KEY (id)
+);
+
+CREATE TABLE conteudo (
+    id INT NOT NULL AUTO_INCREMENT,
+    slug MEDIUMTEXT NOT NULL,
+    idtopico INT NOT NULL,
+    ordem INT NOT NULL,
+    PRIMARY KEY (id)
+);
